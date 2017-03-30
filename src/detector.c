@@ -417,6 +417,9 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
         imagenet = 1;
         classes = 200;
     } else {
+        if (0 == strcmp(type, "miotcd")) {
+            classes = 20;
+        }
         if(!outfile) outfile = "comp4_det_test_";
         fps = calloc(classes, sizeof(FILE *));
         for(j = 0; j < classes; ++j){
@@ -424,7 +427,6 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
             fps[j] = fopen(buff, "w");
         }
     }
-
 
     box *boxes = calloc(l.w*l.h*l.n, sizeof(box));
     float **probs = calloc(l.w*l.h*l.n, sizeof(float *));
