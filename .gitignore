@@ -6,7 +6,11 @@
 *.jpg
 old/
 mnist/
-data/
+data/*
+!data/miotcd*
+backup/*
+results/*
+goodresults/*
 caffe/
 grasp/
 images/
@@ -14,8 +18,8 @@ opencv/
 convnet/
 decaf/
 submission/
-cfg/
 darknet
+bad.list
 .fuse*
 
 # OS Generated #
@@ -24,3 +28,8 @@ ehthumbs.db
 Icon?
 Thumbs.db
 *.swp
+
+
+*~
+*.log
+*.weights
