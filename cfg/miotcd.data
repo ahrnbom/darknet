@@ -1,6 +1,6 @@
 classes= 20
-train  = /home2/ahrnbom/objdet/darknet/data/miotcd-train.txt
-valid  = /home2/ahrnbom/objdet/darknet/data/miotcd-test.txt
+train  = data/miotcd-train.txt
+valid  = data/miotcd-test.txt
 names = data/miotcd.names
 backup = backup
 eval = miotcd
