@@ -480,6 +480,8 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
         for(t = 0; t < nthreads && i+t-nthreads < m; ++t){
             char *path = paths[i+t-nthreads];
             char *id = basecfg(path);
+            char id2[1024];
+            strcpy(id2, id);
             float *X = val_resized[t].data;
             network_predict(net, X);
             int w = val[t].w;
@@ -491,9 +493,9 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
             } else if (imagenet){
                 print_imagenet_detections(fp, i+t-nthreads+1, boxes, probs, l.w*l.h*l.n, classes, w, h);
             } else {
-                print_detector_detections(fps, id, boxes, probs, l.w*l.h*l.n, classes, w, h);
+                print_detector_detections(fps, id2, boxes, probs, l.w*l.h*l.n, classes, w, h);
             }
-            free(id);
+            //free(id);
             free_image(val[t]);
             free_image(val_resized[t]);
         }
