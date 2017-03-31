@@ -416,10 +416,15 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
         fp = fopen(buff, "w");
         imagenet = 1;
         classes = 200;
-    } else {
-        if (0 == strcmp(type, "miotcd")) {
-            classes = 20;
+    } else if (0 == strcmp(type, "miotcd")) {
+        classes = 20;
+        if(!outfile) outfile = "miotcd_";
+        fps = calloc(classes, sizeof(FILE *));
+        for(j = 0; j < classes; ++j){
+            snprintf(buff, 1024, "%s/%s%s.txt", prefix, outfile, names[j]);
+            fps[j] = fopen(buff, "w");
         }
+    } else {
         if(!outfile) outfile = "comp4_det_test_";
         fps = calloc(classes, sizeof(FILE *));
         for(j = 0; j < classes; ++j){
