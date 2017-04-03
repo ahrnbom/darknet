@@ -1,6 +1,6 @@
 classes= 20
 train  = data/miotcd-train.txt
-valid  = data/miotcd-test1.txt
+valid  = data/miotcd-train1.txt
 names = data/miotcd.names
 backup = backup
 eval = miotcd
