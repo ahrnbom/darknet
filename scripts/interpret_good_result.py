@@ -19,7 +19,7 @@ for i in range(0, num_classes):
     col = (int(cvcol[0][0][0]), int(cvcol[0][0][1]), int(cvcol[0][0][2]))
     class_colors.append(col) 
 
-basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/train/'
+basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/test/'
 ress = glob('goodresults/*.txt')
 shuffle(ress)
 
