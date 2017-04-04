@@ -5,7 +5,7 @@ import os
 orig = glob("results/*.txt")
 miotcd_classes = ["articulated_truck", "bicycle", "bus", "car", "motorcycle", "motorized_vehicle", "non-motorized_vehicle", "pedestrian", "pickup_truck", "single_unit_truck", "work_van"]
 
-basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/test/'
+basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/train/'
 
 old = glob("goodresults/*.txt")
 for o in old:
@@ -14,7 +14,7 @@ for o in old:
 
 for o in orig:
     splot = o.strip(".txt").split("_")
-    cname = "_".join(splot[3:])
+    cname = '_'.join(splot[1:])
     
     if cname in miotcd_classes:
         print(cname)
@@ -52,6 +52,7 @@ for o in orig:
                 if bw > 0:
                     impath = basepath + imname + '.jpg'
                     im = cv2.imread(impath)
+                    print(impath)
                     shaep = im.shape
                     xc /= shaep[1]
                     yc /= shaep[0]

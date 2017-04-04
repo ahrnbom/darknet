@@ -19,15 +19,16 @@ for i in range(0, num_classes):
     col = (int(cvcol[0][0][0]), int(cvcol[0][0][1]), int(cvcol[0][0][2]))
     class_colors.append(col) 
 
-basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/test/'
-ims = glob(basepath + '*.jpg')
-shuffle(ims)
+basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/train/'
+ress = glob('goodresults/*.txt')
+shuffle(ress)
 
-impath = ims[0]
+respath = ress[0]
+
+name = respath.split('/')[-1].strip('.txt')
+impath = basepath + name + '.jpg'
 im = cv2.imread(impath)
-name = impath.split('/')[-1].strip('.jpg')
 
-respath = 'goodresults/' + name + '.txt'
 lines = []
 try:
     with open(respath, 'r') as f:

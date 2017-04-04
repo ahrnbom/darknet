@@ -351,6 +351,7 @@ void get_region_boxes(layer l, int w, int h, float thresh, float **probs, box *b
             int box_index = entry_index(l, 0, n*l.w*l.h + i, 0);
             float scale = predictions[obj_index];
             boxes[index] = get_region_box(predictions, l.biases, n, box_index, col, row, l.w, l.h, l.w*l.h);
+            
             if(1){
                 int max = w > h ? w : h;
                 boxes[index].x =  (boxes[index].x - (max - w)/2./max) / ((float)w/max); 
