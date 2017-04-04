@@ -484,8 +484,8 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
             strcpy(id2, id);
             float *X = val_resized[t].data;
             network_predict(net, X);
-            int w = val[t].w;
-            int h = val[t].h;
+            int w = 720;//val[t].w;
+            int h = 480;//val[t].h;
             get_region_boxes(l, w, h, thresh, probs, boxes, 0, map, .5);
             if (nms) do_nms_sort(boxes, probs, l.w*l.h*l.n, classes, nms);
             if (coco){

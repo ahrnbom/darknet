@@ -49,20 +49,21 @@ for o in orig:
                 bw = x2 - x1
                 bh = y2 - y1
                 
-                if bw > 0:
-                    impath = basepath + imname + '.jpg'
-                    im = cv2.imread(impath)
-                    print(impath)
-                    shaep = im.shape
-                    xc /= shaep[1]
-                    yc /= shaep[0]
-                    bw /= shaep[1]
-                    bh /= shaep[0]
-                    newline = "{} {} {} {} {} {}\n".format(cname, conf, xc, yc, bw, bh)
-                    
-                    with open("goodresults/{}.txt".format(imname),'a') as of:
-                        of.write(newline)
-           
+                #if bw > 0:
+                impath = basepath + imname + '.jpg'
+                #im = cv2.imread(impath)
+                #print(impath)
+                #shaep = im.shape
+                shaep = [480,720]
+                xc /= shaep[1]
+                yc /= shaep[0]
+                bw /= shaep[1]
+                bh /= shaep[0]
+                newline = "{} {} {} {} {} {}\n".format(cname, conf, xc, yc, bw, bh)
+                
+                with open("goodresults/{}.txt".format(imname),'a') as of:
+                    of.write(newline)
+       
         
         miotcd_classes.remove(cname)
 print(miotcd_classes)
