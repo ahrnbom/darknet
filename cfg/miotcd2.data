@@ -1,0 +1,7 @@
+classes= 20
+train  = ../train2.txt
+valid  = ../test2.txt
+names = data/miotcd.names
+backup = backup/miotcd2
+eval = miotcd2
+
