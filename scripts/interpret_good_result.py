@@ -19,7 +19,7 @@ for i in range(0, num_classes):
     col = (int(cvcol[0][0][0]), int(cvcol[0][0][1]), int(cvcol[0][0][2]))
     class_colors.append(col) 
 
-basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/test/'
+basepath = '/media/ma/48026b8d-78d7-48d8-90ec-0ab2252ab34d/ma/miotcd/MIO-TCD-Localization/train/'
 ress = glob('goodresults/*.txt')
 shuffle(ress)
 
@@ -68,4 +68,6 @@ for line in lines:
         cv2.putText(im2show, text, text_pos, cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0,0,0), 1)
         
 cv2.imshow(name, im2show)
+cv2.imwrite("out.jpg", im2show)
 cv2.waitKey(0)
+

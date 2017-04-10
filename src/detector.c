@@ -416,9 +416,12 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
         fp = fopen(buff, "w");
         imagenet = 1;
         classes = 200;
-    } else if (0 == strcmp(type, "miotcd")) {
+    } else if (0 == strncmp(type, "miotcd", 5)) {
         classes = 20;
-        if(!outfile) outfile = "miotcd_";
+        char newoutfile[256];
+        sprintf(newoutfile, "%s_", type);
+        if(!outfile) outfile = newoutfile;
+
         fps = calloc(classes, sizeof(FILE *));
         for(j = 0; j < classes; ++j){
             snprintf(buff, 1024, "%s/%s%s.txt", prefix, outfile, names[j]);

@@ -6,7 +6,7 @@ n =  len(a)
 ious = np.zeros(n)
 recas = np.zeros(n)
 
-fold = "miotcd1"
+fold = "miotcd5"
 
 for i in range(0,n):
     fname = "logs/output_test_{}_yolo_{}.log".format(fold, a[i])
