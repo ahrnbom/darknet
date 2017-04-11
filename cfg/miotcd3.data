@@ -1,7 +1,7 @@
-classes= 20
+classes= 80
 train  = ../train3.txt
 valid  = ../test3.txt
-names = data/miotcd.names
+names = data/miotcd_coco.names
 backup = backup/miotcd3
 eval = miotcd3
 
