@@ -9,7 +9,7 @@ from ensemble import GeneralEnsemble
 conf_thresh = 0.2
 ndets = 2
 
-miotcd_classes = ["articulated_truck", "bicycle", "bus", "car", "motorcycle", "motorized_vehicle", "non-motorized_vehicle", "pedestrian", "pickup_truck", "single_unit_truck", "work_van"]
+miotcd_classes = ["articulatedtruck", "bicycle", "bus", "car", "motorcycle", "motorizedvehicle", "nonmotorizedvehicle", "pedestrian", "pickuptruck", "singleunittruck", "workvan"]
 num_classes = len(miotcd_classes)
 class_colors = []
 for i in range(0, num_classes):

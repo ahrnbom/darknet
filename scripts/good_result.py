@@ -8,7 +8,7 @@ fold = sys.argv[1]
 print("Using fold {}".format(fold))
 
 orig = glob("results/{}*.txt".format(fold))
-miotcd_classes = ["articulated_truck", "bicycle", "bus", "car", "motorcycle", "motorized_vehicle", "non-motorized_vehicle", "pedestrian", "pickup_truck", "single_unit_truck", "work_van"]
+miotcd_classes = ["articulatedtruck", "bicycle", "bus", "car", "motorcycle", "motorizedvehicle", "nonmotorizedvehicle", "pedestrian", "pickuptruck", "singleunittruck", "workvan"]
 
 old = glob("goodresults/*.txt")
 for o in old:
