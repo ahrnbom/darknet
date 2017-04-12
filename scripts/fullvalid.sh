@@ -1,3 +1,4 @@
 make
-./scripts/valid.sh
-python scripts/good_result.py
+rm results/*
+./scripts/valid.sh miotcd2 miotcd2
+python scripts/good_result.py miotcd2
