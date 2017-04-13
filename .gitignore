@@ -4,6 +4,7 @@
 *.out
 *.png
 *.jpg
+*.pyc
 old/
 mnist/
 data/*
@@ -12,6 +13,7 @@ backup/*
 results/*
 goodresults/*
 goodresults*/*
+csv_results/*
 caffe/
 grasp/
 images/

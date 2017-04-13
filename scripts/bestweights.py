@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-a = np.arange(7623000,7723000,1000).tolist()
+a = np.arange(500400,503300,200).tolist()
 n =  len(a)
 ious = np.zeros(n)
 recas = np.zeros(n)
@@ -9,7 +9,7 @@ recas = np.zeros(n)
 fold = "miotcd5"
 
 for i in range(0,n):
-    fname = "logs/output_test_{}_yolo_{}.log".format(fold, a[i])
+    fname = "logs/output_test_{}_yolo-miotcd_{}.log".format(fold, a[i])
     with open(fname, 'r') as f:
         lines = [line.strip('\n') for line in f.readlines()]
     lastline = lines[-1]
