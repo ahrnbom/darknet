@@ -4,7 +4,7 @@ import os
 import sys
 from folder import mkdir
 
-comp = "peano"
+comp = "browkin"
 
 tt = sys.argv[2]
 assert(tt == "train" or tt == "test")
@@ -30,7 +30,7 @@ try:
 except:
     print("Did not remove file")
 
-orig = glob("results/{}*.txt".format(fold))
+orig = glob("results/miotcd*.txt")
 miotcd_classes = ["articulatedtruck", "bicycle", "bus", "car", "motorcycle", "motorizedvehicle", "nonmotorizedvehicle", "pedestrian", "pickuptruck", "singleunittruck", "workvan"]
 
 cnames2 = {"articulatedtruck": 'articulated_truck', 

@@ -1,0 +1,7 @@
+classes= 80
+train  = data/miotcd-train.txt
+valid  = data/miotcd-train.txt
+names = data/miotcd_coco.names
+backup = backup
+eval = miotcd
+
