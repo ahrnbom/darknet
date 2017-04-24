@@ -9,7 +9,10 @@ tt = sys.argv[2]
 
 conf_thresh = 0.2
 
-csvpath = 'csv_results/{}_{}.csv'.format(fold, tt)
+if fold == "gt":
+    csvpath = 'csv_results/gt_train.csv'
+else:
+    csvpath = 'csv_results/miotcd{}_{}.csv'.format(fold, tt)
 with open(csvpath, 'rb') as csvfile:
     reader = csv.reader(csvfile)
     rows = [r for r in reader]
@@ -47,19 +50,30 @@ h = im.shape[0]
 
 im2show = im.copy()
 for row in found:
-    cname = row[1]
-    conf = float(row[2])
-    if conf > conf_thresh:
+    if fold == "gt":
+        cname = row[1]
+        x1 = int(row[2])
+        y1 = int(row[3])
+        x2 = int(row[4])
+        y2 = int(row[5])
+        conf = 1.0
+    else:
+        cname = row[1]
+        conf = float(row[2])
         x1 = int(row[3])
         y1 = int(row[4])
         x2 = int(row[5])
         y2 = int(row[6])
-    
+        
+    if conf > conf_thresh:
         cnum = miotcd_classes.index(cname)
 
         cv2.rectangle(im2show, (x1, y1), (x2, y2), class_colors[cnum], 2)
         
-        text = cname + " " + ('%.2f' % conf)
+        if fold == "gt":
+            text = cname    
+        else:
+            text = cname + " " + ('%.2f' % conf)
         tlen = len(text)*7
         
         text_top = (x1, y1-15)
