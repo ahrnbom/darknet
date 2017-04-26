@@ -6,6 +6,10 @@ import numpy as np
 
 fold = sys.argv[1]
 tt = sys.argv[2]
+chooseim = False
+if len(sys.argv) > 3:
+    imchoice = sys.argv[3]
+    chooseim = True
 
 conf_thresh = 0.2
 
@@ -21,6 +25,8 @@ nrows = len(rows)
 i = randint(0, nrows-1)
 somerow = rows[i]
 imname = somerow[0]
+if chooseim:
+    imname = imchoice
 
 found = []
 for row in rows:

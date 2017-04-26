@@ -299,7 +299,7 @@ void validate_detector_flip(char *datacfg, char *cfgfile, char *weightfile, char
     int t;
 
     float thresh = .005;
-    float nms = .45;
+    float nms = .0;
 
     int nthreads = 4;
     image *val = calloc(nthreads, sizeof(image));
@@ -445,7 +445,7 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
     int t;
 
     float thresh = .005;
-    float nms = .45;
+    float nms = .0;
 
     int nthreads = 4;
     image *val = calloc(nthreads, sizeof(image));
@@ -621,7 +621,7 @@ void validate_detector_iou(char *cfgfile, char *weightfile, char *datacfg)
 
     float thresh = .001;
     float iou_thresh = .5;
-    float nms = .4;
+    float nms = .0;
 
     int total = 0;
     int correct = 0;
@@ -693,7 +693,7 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
     char buff[256];
     char *input = buff;
     int j;
-    float nms=.4;
+    float nms=.0;
     while(1){
         if(filename){
             strncpy(input, filename, 256);
